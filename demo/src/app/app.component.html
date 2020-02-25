@@ -1,35 +1,63 @@
 <h1>Column chart</h1>
 <google-chart [data]="columnChart"></google-chart>
-<input type="button" value="Change data" (click)="changeData()"> <input type="button" value="Change chart type" (click)="changeChartType()">
+<!-- <input type="button" value="Change data" (click)="changeData()" />
+<input type="button" value="Change chart type" (click)="changeChartType()" /> -->
 <p></p>
 <h4>Animated</h4>
 <google-chart [data]="columnChart2"></google-chart>
-<input type="button" value="Change data" (click)="changeData2()">
-<input type="button" value="Open as PNG" (click)="openAsPNG()">
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document" style="width: 90%; max-width:1200px;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">PNG image</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <img [src]="[imageURI]" width="100%">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+<!-- <input type="button" value="Change data" (click)="changeData2()" />
+<input type="button" value="Open as PNG" (click)="openAsPNG()" /> -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog"
+    role="document"
+    style="width: 90%; max-width:1200px;"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">PNG image</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img [src]="[imageURI]" width="100%" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
       </div>
     </div>
   </div>
+</div>
 <p></p>
 
 <h4>With charts in tooltip</h4>
-<p>Adapted from <a href="https://developers.google.com/chart/interactive/docs/customizing_tooltip_content#placing-charts-in-tooltips">here</a>.</p>
+<p>
+  Adapted from
+  <a
+    href="https://developers.google.com/chart/interactive/docs/customizing_tooltip_content#placing-charts-in-tooltips"
+    >here</a
+  >.
+</p>
 <google-chart [data]="tooltipChart" hidden></google-chart>
-<google-chart [data]="columnChartWTooltips" (chartReadyOneTime)="setupTooltips()"></google-chart>
+<google-chart
+  [data]="columnChartWTooltips"
+  (chartReadyOneTime)="setupTooltips()"
+></google-chart>
 <p></p>
 <h4>Material</h4>
 <google-chart [data]="barChart"></google-chart>
@@ -47,15 +75,24 @@
 <h1>Timeline chart</h1>
 <google-chart [data]="timelineChart"></google-chart>
 <h1>Line chart with events</h1>
-<h4>Selected row: {{selectEvent?.row}}</h4>
-<h4>Selected column: {{selectEvent?.column}}</h4>
-<pre>{{selectEvent | json}}</pre>
-<google-chart [data]="lineChart" (chartReady)="ready($event)" (chartError)="error($event)" (chartSelect)="select($event)"></google-chart>
+<h4>Selected row: {{ selectEvent?.row }}</h4>
+<h4>Selected column: {{ selectEvent?.column }}</h4>
+<pre>{{ selectEvent | json }}</pre>
+<google-chart
+  [data]="lineChart"
+  (chartReady)="ready($event)"
+  (chartError)="error($event)"
+  (chartSelect)="select($event)"
+></google-chart>
 <h1>Combo chart</h1>
 <div class="alert alert-info" role="alert">
-See console log for mouse over events.
+  See console log for mouse over events.
 </div>
-<google-chart [data]="comboChart" (mouseOver)="mouseOver($event)" (mouseOut)="mouseOut($event)"></google-chart>
+<google-chart
+  [data]="comboChart"
+  (mouseOver)="mouseOver($event)"
+  (mouseOut)="mouseOut($event)"
+></google-chart>
 
 <h1>Table with formatter</h1>
 <p></p>
@@ -72,20 +109,28 @@ See console log for mouse over events.
 
 <h1>GeoChart</h1>
 <div class="alert alert-info" role="alert">
-  Selected region: <code>{{regionClickEvent | json}}</code>
+  Selected region: <code>{{ regionClickEvent | json }}</code>
 </div>
-<google-chart [data]="geoChart" (regionClick)="geoChartRegionClick($event)"></google-chart>
+<google-chart
+  [data]="geoChart"
+  (regionClick)="geoChartRegionClick($event)"
+></google-chart>
 
 <h1>OrgChart</h1>
 <google-chart [data]="orgChart"></google-chart>
-<input type="button" value="Toggle collapse" (click)="collapseOrgChart()">
+<input type="button" value="Toggle collapse" (click)="collapseOrgChart()" />
 <h1>TreeMap</h1>
 <h2>click on the button below to append data</h2>
 <google-chart [data]="treeMap"></google-chart>
-<input type="button" value="Append data" (click)="appendDataToTreeMap()">
+<input type="button" value="Append data" (click)="appendDataToTreeMap()" />
 <h1>CandlestickChart</h1>
 <google-chart [data]="candlestickChart"></google-chart>
 <h1>AnnotationChart</h1>
 <google-chart [data]="annotationChart"></google-chart>
 <p></p>
-<p>Some code samples are adapted from <a href="https://developers.google.com/chart/">Google Charts</a> where they are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.</p>
+<p>
+  Some code samples are adapted from
+  <a href="https://developers.google.com/chart/">Google Charts</a> where they
+  are licensed under the
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.
+</p>

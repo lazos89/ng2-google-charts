@@ -3,13 +3,13 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noEmitHelpers" :true,
+    "noEmitHelpers": true,
     "lib": ["es6", "dom"],
     "types": [
       "webpack"
     ],
     "mapRoot": "./",
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": false,
@@ -17,5 +17,12 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
-  }
+  },
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
 }

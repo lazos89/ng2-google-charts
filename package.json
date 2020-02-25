@@ -14,7 +14,8 @@
     "build": "npm run lint && npm run build.ngm && npm run link",
     "build.ngm": "ngm build -p src --clean",
     "build.watch": "ngm build -p src --watch --skip-bundles",
-    "start": "ng serve --aot --poll 2000"
+    "start": "ng serve --aot --poll 2000",
+    "packagr": "ng-packagr -p ng-package.json"
   },
   "main": "bundles/ng2-google-charts.umd.js",
   "module": "index.js",
@@ -38,26 +39,27 @@
   },
   "homepage": "https://www.devrandom.it/software/ng2-google-charts/",
   "devDependencies": {
-    "@angular/cli": "~8.3.21",
-    "@angular/common": "~8.2.14",
-    "@angular/compiler": "~8.2.14",
-    "@angular/compiler-cli": "~8.2.14",
-    "@angular/core": "~8.2.14",
-    "@angular/platform-browser": "~8.2.14",
-    "@angular/platform-browser-dynamic": "~8.2.14",
-    "@angular-devkit/build-angular": "~0.803.21",
+    "@angular-devkit/build-angular": "~0.900.3",
+    "@angular/cli": "~9.0.3",
+    "@angular/common": "~9.0.2",
+    "@angular/compiler": "~9.0.2",
+    "@angular/compiler-cli": "~9.0.2",
+    "@angular/core": "~9.0.2",
+    "@angular/platform-browser": "~9.0.2",
+    "@angular/platform-browser-dynamic": "~9.0.2",
     "@types/bootstrap": "^4.2.0",
     "@types/jquery": "^3.3.29",
-    "@types/node": "~13.1.4",
+    "@types/node": "^12.11.1",
     "@types/webpack": "4.41.1",
     "bootstrap": "^4.4.1",
     "classlist-polyfill": "1.2.0",
-    "codelyzer": "^5.0.0",
+    "codelyzer": "^5.1.2",
     "core-js": "^3.6.1",
     "cpy": "8.0.0",
     "cpy-cli": "3.0.0",
     "gitignore-to-glob": "0.3.0",
     "jquery": "^3.4.1",
+    "ng-packagr": "^9.0.1",
     "ngm-cli": "1.0.4",
     "reflect-metadata": "^0.1.13",
     "require-dir": "1.2.0",
@@ -66,8 +68,11 @@
     "ts-node": "~8.5.4",
     "tslint": "~5.15.0",
     "tslint-config-valorsoft": "2.2.1",
-    "typescript": "~3.5.3",
+    "typescript": "~3.7.5",
     "webdriver-manager": "12.1.7",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.10.2"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
   }
 }
